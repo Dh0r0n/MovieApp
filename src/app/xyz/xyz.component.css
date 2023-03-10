@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+  }
+  
+  .movie-list {
+    width: 50%;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  table {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  thead tr th:first-child {
+    background-color: #0b6623;
+    color: white;
+  }
+  tbody tr:nth-child(odd) {
+    background-color: white;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #d0d0d0;
+  }
+   
+  tr.selected {
+    background-color: blue !important;
+    color: white !important;
+  }
+  
+  .movie-details {
+    width: 50%;
+    padding: 20px;
+    background-color: #912222;
+    text-align: center;
+    border: 10px solid #e71313;
+  }
+
+  .movie-details img {
+    max-width: 100%;
+  }

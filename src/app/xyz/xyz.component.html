@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="movie-list">
+      <input type="text" [(ngModel)]="searchText" placeholder="Buscar película..." (input)="onSearchInput()">
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let movie of filteredMovies; let i = index"
+            [ngClass]="{'selected': i === selectedMovieIndex}"
+            (click)="onMovieSelected(i)">
+            <td>{{ movie.title }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="movie-details" *ngIf="selectedMovieIndex !== null">
+      <h2>{{filteredMovies[selectedMovieIndex].title}}</h2>
+      <p>Release Date: {{filteredMovies[selectedMovieIndex].releaseDate}}</p>
+      <p>Original Language: {{filteredMovies[selectedMovieIndex].originalLanguage}}</p>
+      <p>Overview: {{filteredMovies[selectedMovieIndex].overview}}</p>
+      <img [src]="filteredMovies[selectedMovieIndex].imageUrl" alt="{{filteredMovies[selectedMovieIndex].title}}">
+    </div>
+  </div>
